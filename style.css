@@ -676,3 +676,147 @@ button:focus-visible {
 .full-chart-page .org-leaf-wrap { margin-bottom: 4px; }
 
 .full-chart-page .chart-colour-key .key-example { background:#c2410c !important; border-color:#7c2d12 !important; }
+
+/* =========================================================
+   MOBILE-FIRST UPGRADE — PHONES + SMALL TABLETS
+   ========================================================= */
+@media (max-width: 760px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  body{font-size:15px;line-height:1.55}
+  .container,.nav-wrap{width:calc(100% - 24px);max-width:none}
+
+  /* Compact mobile header */
+  .site-header{position:sticky;top:0}
+  .nav-wrap{min-height:58px;gap:8px}
+  .brand{font-size:.68rem;letter-spacing:.045em;line-height:1.18;max-width:calc(100% - 52px)}
+  .menu-dots{display:flex;width:38px;height:38px;flex:0 0 38px;margin-left:auto}
+  .site-header nav.open{
+    left:12px;right:12px;top:61px;
+    grid-template-columns:1fr;
+    max-height:calc(100vh - 74px);
+    overflow-y:auto;
+    padding:7px;
+  }
+  .site-header nav.open a{
+    padding:11px 12px;
+    font-size:.78rem;
+    border-bottom:1px solid #dbe2e7;
+  }
+  .site-header nav.open a:last-child{border-bottom:0}
+
+  /* Home */
+  .home{padding:28px 0 20px}
+  .eyebrow{font-size:.62rem;line-height:1.4}
+  .portrait{width:145px;height:166px}
+  .home h1{font-size:2rem;line-height:1.06;margin:15px 0 9px}
+  .subtitle{font-size:.9rem;line-height:1.55;padding:0 5px}
+
+  /* Home organization chart becomes a readable vertical mobile chart */
+  .home-org-chart{padding:0 6px;overflow:visible}
+  .home-org-chart .org-root{width:100%;max-width:100%;font-size:.86rem;padding:12px 13px}
+  .home-tree-root{display:grid!important;grid-template-columns:1fr!important;gap:9px!important;width:100%!important;padding:0!important}
+  .home-tree-root>.tree-group{width:100%!important}
+  .home-tree-root .tree-branch{min-height:58px;padding:12px 13px;display:flex;align-items:center;gap:8px}
+  .home-tree-root .tree-branch strong{font-size:.88rem;line-height:1.25}
+  .home-tree-root .tree-count{margin-left:auto}
+  .home-org-chart .org-trunk{height:18px}
+
+  /* Give the five home divisions unmistakable high-contrast colours */
+  .home-tree-root>.tree-group:nth-child(1) .tree-branch{background:#0645ad!important;border-color:#032f73!important;color:#fff!important}
+  .home-tree-root>.tree-group:nth-child(2) .tree-branch{background:#087f3e!important;border-color:#045b2b!important;color:#fff!important}
+  .home-tree-root>.tree-group:nth-child(3) .tree-branch{background:#c77a00!important;border-color:#8a5200!important;color:#fff!important}
+  .home-tree-root>.tree-group:nth-child(4) .tree-branch{background:#5b21b6!important;border-color:#3b147a!important;color:#fff!important}
+  .home-tree-root>.tree-group:nth-child(5) .tree-branch{background:#c2410c!important;border-color:#7c2d12!important;color:#fff!important}
+  .home-tree-root .tree-branch strong,.home-tree-root .tree-branch .tree-count{color:#fff!important}
+
+  .page-note{font-size:.82rem;margin:15px 0;padding:11px 12px}
+
+  /* Detail pages */
+  .hero{padding:30px 0 24px}
+  .hero h1{font-size:2rem}
+  .section{margin:30px 0}
+  .section-head{display:block;padding-bottom:10px;margin-bottom:11px}
+  .section-head h2{font-size:1.35rem;line-height:1.2}
+  .section-head span{display:block;margin-top:4px}
+  .tools{padding:10px;gap:9px}
+  .tools .search{width:100%;max-width:none;font-size:.9rem}
+  .item{display:block;padding:13px;border-radius:8px}
+  .num{width:34px;height:34px;margin-bottom:9px;font-size:.75rem}
+  .item h3{font-size:1rem;line-height:1.3;margin-bottom:8px}
+  .definition,.example{font-size:.88rem;line-height:1.55;padding:10px 11px;overflow-wrap:anywhere;word-break:normal}
+  .references{padding:32px 0}
+  .references h2{font-size:1.6rem}
+  .references ol{padding-left:20px}
+  .references li{font-size:.9rem}
+  .credit{width:100%;padding:13px 14px}
+  footer{margin-top:25px}
+  .footer-in{min-height:58px;display:block;padding:12px 0;font-size:.72rem}
+
+  /* Full chart: no forced 1080px canvas on a phone. Stack all five divisions. */
+  .dedicated-chart{width:calc(100% - 12px);margin:30px auto 45px}
+  .dedicated-chart-head{display:block;margin-bottom:12px;padding-bottom:12px}
+  .dedicated-chart-head h2{font-size:1.3rem;line-height:1.2}
+  .dedicated-chart-head p{font-size:.78rem}
+  .chart-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:11px}
+  .chart-action{width:100%;padding:10px 8px;font-size:.73rem}
+  .dedicated-chart-canvas{
+    min-height:0;
+    padding:18px 10px 24px;
+    overflow-x:hidden;
+    border-radius:10px;
+  }
+  .chart-root-box{width:100%;min-width:0;max-width:100%;padding:12px 10px}
+  .chart-root-box strong{font-size:.9rem;line-height:1.25}
+  .main-rail,.org-main-card:before{display:none}
+  .main-cards{display:block;min-width:0;width:100%}
+  .org-main-card{width:100%;margin:0 0 18px}
+  .org-main-head{
+    grid-template-columns:24px 1fr auto;
+    min-height:58px;
+    padding:10px;
+    border-width:2px;
+  }
+  .org-main-title{font-size:.82rem;line-height:1.25}
+  .org-main-count{font-size:.6rem}
+  .org-main-line{height:12px}
+  .org-divisions{padding-left:10px;gap:8px}
+  .org-division:before{left:-11px;width:10px}
+  .org-division-head{grid-template-columns:34px 1fr auto;min-height:47px;padding:8px}
+  .org-division-head strong,.org-sub-head strong{font-size:.72rem;line-height:1.25}
+  .org-subdivision{margin-top:6px}
+  .org-sub-head{grid-template-columns:39px 1fr auto;min-height:44px;padding:7px}
+  .org-leaves{margin:5px 0 0 7px;padding-left:8px;gap:5px}
+  .org-leaf{grid-template-columns:25px 1fr;font-size:.72rem;line-height:1.3;padding:7px 6px}
+  .org-leaf:before{left:-9px;width:8px}
+
+  /* Full-chart high contrast colours remain visible on small screens */
+  .full-chart-page .org-main-head{background:#0645ad!important;border-color:#032f73!important}
+  .full-chart-page .org-division-head{background:#087f3e!important;border-color:#045b2b!important}
+  .full-chart-page .org-sub-head{background:#f2a900!important;border-color:#a66f00!important}
+  .full-chart-page .org-main-head *,.full-chart-page .org-division-head *{color:#fff!important}
+  .full-chart-page .org-sub-head *{color:#17120a!important}
+
+  /* Examples: all 89 remain OPEN and readable on phone */
+  .full-chart-page .org-example{margin:4px 0 2px 7px;border-width:1.5px}
+  .full-chart-page .org-example summary{padding:7px 8px;font-size:.7rem}
+  .full-chart-page .org-example-content{padding:9px 9px 10px;font-size:.78rem;line-height:1.5;overflow-wrap:anywhere}
+  .full-chart-page .org-example-block + .org-example-block{margin-top:7px;padding-top:7px}
+  .full-chart-page .org-example-label{font-size:.62rem}
+
+  .chart-colour-key,.chart-colour-key{font-size:.68rem;gap:9px;padding:10px 4px 0}
+}
+
+@media (max-width:390px){
+  .brand{font-size:.62rem}
+  .home h1{font-size:1.8rem}
+  .home-tree-root .tree-branch strong{font-size:.82rem}
+  .chart-actions{grid-template-columns:1fr}
+  .org-main-title{font-size:.78rem}
+  .org-leaf{font-size:.69rem}
+  .full-chart-page .org-example-content{font-size:.74rem}
+}
+
+/* Respect users who prefer reduced motion on mobile/desktop. */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
