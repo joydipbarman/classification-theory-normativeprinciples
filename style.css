@@ -153,3 +153,472 @@
 
 /* FULL CHART PAGE */
 .chart-page-hero{width:min(1180px,calc(100% - 40px));margin:58px auto 8px;text-align:center}.chart-page-hero h1{margin:7px 0 10px;font-size:clamp(2rem,4.2vw,3.3rem)}.chart-page-hero p{max-width:760px;margin:auto;color:var(--muted)}.full-chart-page{margin-top:30px}.full-chart-page .dedicated-chart-canvas{min-height:520px}
+
+/* =========================================================
+   FULL CHART — THREE-LEVEL COLOUR HIERARCHY
+   Level 1 = Division
+   Level 2 = Subdivision
+   Level 3 = Sub-subdivision
+   ========================================================= */
+
+/* Division: the five main sections */
+.full-chart-page .org-main-head {
+  background: #e8eef7;
+  border: 1.5px solid #557493;
+}
+.full-chart-page .org-main-head:hover {
+  background: #dfe9f5;
+}
+.full-chart-page .org-main-title {
+  color: #173b63;
+}
+.full-chart-page .org-main-code {
+  color: #315f8a;
+}
+
+/* Subdivision: 1.1, 2.1, 3.1, 3.2, 3.3, etc. */
+.full-chart-page .org-division-head {
+  background: #eaf5ee;
+  border: 1.5px solid #5d8b70;
+}
+.full-chart-page .org-division-head strong {
+  color: #24543a;
+}
+.full-chart-page .org-division-head .org-code {
+  color: #2f6f4e;
+}
+
+/* Sub-subdivision: 3.1.1, 3.1.2, 3.1.3, etc. */
+.full-chart-page .org-sub-head {
+  background: #fbf2df;
+  border: 1.5px solid #c19a4b;
+}
+.full-chart-page .org-sub-head strong {
+  color: #70531d;
+}
+.full-chart-page .org-sub-head .org-code {
+  color: #a47720;
+}
+
+/* Individual topics remain neutral so the three structural levels stand out. */
+.full-chart-page .org-leaf {
+  background: #ffffff;
+  border: 1px solid #d9e0e5;
+}
+.full-chart-page .org-leaf span {
+  color: #8a6724;
+}
+
+/* Clear hierarchy connector colours */
+.full-chart-page .org-divisions {
+  border-left-color: #9ab7a4;
+}
+.full-chart-page .org-division:before {
+  background: #9ab7a4;
+}
+.full-chart-page .org-leaves {
+  border-left-color: #d2b675;
+}
+.full-chart-page .org-leaf:before {
+  background: #c8d1d6;
+}
+
+/* Small legend explaining the colours */
+.full-chart-page .chart-colour-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 14px auto 0;
+  font-size: .72rem;
+  color: var(--muted);
+}
+.full-chart-page .chart-colour-key span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.full-chart-page .chart-colour-key i {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.full-chart-page .chart-colour-key .key-division {
+  background: #e8eef7;
+  border-color: #557493;
+}
+.full-chart-page .chart-colour-key .key-subdivision {
+  background: #eaf5ee;
+  border-color: #5d8b70;
+}
+.full-chart-page .chart-colour-key .key-subsubdivision {
+  background: #fbf2df;
+  border-color: #c19a4b;
+}
+
+/* =========================================================
+   SITE-WIDE COLOUR HIERARCHY
+   Applied to HOME and every section page.
+   ========================================================= */
+
+/* HOME: five main divisions use the Division colour family. */
+.home-chart .branch {
+  background: #e8eef7;
+  border: 1.5px solid #6c89a3;
+  border-top: 4px solid #315f8a;
+}
+.home-chart .branch strong { color: #173b63; }
+.home-chart .branch small { color: #42627d; }
+.home-chart .branch:hover {
+  background: #dfe9f5;
+  border-color: #557493;
+}
+.home-chart .branch:nth-child(2) {
+  background: #eaf5ee;
+  border-color: #6d927b;
+  border-top-color: #2f6f4e;
+}
+.home-chart .branch:nth-child(2) strong { color: #24543a; }
+.home-chart .branch:nth-child(2) small { color: #47715a; }
+.home-chart .branch:nth-child(3) {
+  background: #fbf2df;
+  border-color: #c6a45f;
+  border-top-color: #a47720;
+}
+.home-chart .branch:nth-child(3) strong { color: #70531d; }
+.home-chart .branch:nth-child(3) small { color: #80662d; }
+.home-chart .branch:nth-child(4) {
+  background: #eeeaf7;
+  border-color: #9183ae;
+  border-top-color: #68578d;
+}
+.home-chart .branch:nth-child(4) strong { color: #4e416e; }
+.home-chart .branch:nth-child(4) small { color: #6c5e88; }
+.home-chart .branch:nth-child(5) {
+  background: #e8f3f4;
+  border-color: #65949a;
+  border-top-color: #39737a;
+}
+.home-chart .branch:nth-child(5) strong { color: #285d63; }
+.home-chart .branch:nth-child(5) small { color: #4d7479; }
+
+/* Section-page hierarchy: division -> subdivision -> individual topic. */
+.org-chart .org-root {
+  background: var(--navy);
+  border: 1px solid #294f6d;
+  box-shadow: 0 6px 18px #102f4915;
+}
+.org-chart .tree-root > .tree-group > .tree-branch {
+  background: #e8eef7;
+  border: 1.5px solid #6c89a3;
+  border-left: 4px solid #315f8a;
+}
+.org-chart .tree-root > .tree-group > .tree-branch strong { color: #173b63; }
+.org-chart .tree-root > .tree-group > ul > .tree-group > .tree-branch {
+  background: #eaf5ee;
+  border: 1.5px solid #6d927b;
+  border-left: 4px solid #2f6f4e;
+}
+.org-chart .tree-root > .tree-group > ul > .tree-group > .tree-branch strong { color: #24543a; }
+.org-chart .tree-root > .tree-group > ul > .tree-group > ul > .tree-group > .tree-branch {
+  background: #fbf2df;
+  border: 1.5px solid #c6a45f;
+  border-left: 4px solid #a47720;
+}
+.org-chart .tree-root > .tree-group > ul > .tree-group > ul > .tree-group > .tree-branch strong { color: #70531d; }
+.org-chart .tree-leaf {
+  background: #fffdf8;
+  border-color: #dfd3b8;
+}
+.org-chart .tree-leaf:hover {
+  background: #fbf2df;
+  border-color: #c6a45f;
+}
+.org-chart .tree-num { color: #a47720; font-weight: 800; }
+.org-chart .tree-count { background: #fff; border: 1px solid #d2dce2; color: #315f8a; }
+
+/* Detail content cards: keep Definition and Example visually distinct. */
+.section-head {
+  border-bottom: 2px solid #b9c9d5;
+}
+.section-head h2 {
+  background: #e8eef7;
+  border-left: 4px solid #315f8a;
+  padding: 7px 12px;
+  border-radius: 6px;
+}
+.item {
+  border-top: 3px solid #d1dce5;
+}
+.definition {
+  background: #eef4f8;
+  border-color: #cddbe4;
+  border-left: 3px solid #557493;
+}
+.example {
+  background: #fbf2df;
+  border-color: #e3d2ab;
+  border-left-color: #a47720;
+}
+
+/* References on every page: a restrained academic colour treatment. */
+.references {
+  background: #f0f4f7;
+  border-top: 3px solid #557493;
+}
+.references h2 {
+  color: #173b63;
+}
+.references .label {
+  color: #a47720;
+}
+
+/* Full Chart keeps the same site-wide hierarchy colours. */
+.full-chart-page .org-main-head {
+  background: #e8eef7;
+  border-color: #557493;
+  border-top: 4px solid #315f8a;
+}
+.full-chart-page .org-division-head {
+  background: #eaf5ee;
+  border-color: #5d8b70;
+  border-left: 4px solid #2f6f4e;
+}
+.full-chart-page .org-sub-head {
+  background: #fbf2df;
+  border-color: #c19a4b;
+  border-left: 4px solid #a47720;
+}
+.full-chart-page .org-leaf {
+  background: #fffdf8;
+  border-color: #dfd3b8;
+}
+.full-chart-page .org-leaf:hover {
+  background: #fbf2df;
+  border-color: #c6a45f;
+}
+
+
+/* =========================================================
+   HIGH-CONTRAST COLOUR SYSTEM — ALL PAGES
+   Division = strong blue
+   Subdivision = strong green
+   Sub-subdivision = strong gold/orange
+   Topics = crisp white
+   Definitions = violet
+   Examples = coral
+   ========================================================= */
+
+/* Global readability */
+body {
+  color: #101828;
+  background: #ffffff;
+}
+a {
+  color: #0645ad;
+}
+a:hover,
+a:focus {
+  color: #003078;
+}
+
+/* Main section cards / division level */
+.section-card,
+.main-card,
+.category-card,
+.org-main-head {
+  background: #0645ad !important;
+  border-color: #032f73 !important;
+  color: #ffffff !important;
+}
+.section-card *,
+.main-card *,
+.category-card *,
+.org-main-head * {
+  color: #ffffff !important;
+}
+
+/* Subdivision level */
+.subsection-card,
+.subdivision-card,
+.org-division-head {
+  background: #087f3e !important;
+  border-color: #045b2b !important;
+  color: #ffffff !important;
+}
+.subsection-card *,
+.subdivision-card *,
+.org-division-head * {
+  color: #ffffff !important;
+}
+
+/* Sub-subdivision level */
+.subsubsection-card,
+.sub-subdivision-card,
+.org-sub-head {
+  background: #f2a900 !important;
+  border-color: #a66f00 !important;
+  color: #17120a !important;
+}
+.subsubsection-card *,
+.sub-subdivision-card *,
+.org-sub-head * {
+  color: #17120a !important;
+}
+
+/* Individual topic/content cards */
+.topic-card,
+.item-card,
+.org-leaf,
+.card {
+  border-color: #b8c2cc;
+}
+
+/* Definition / Example visual distinction */
+.definition,
+.definition-box,
+.box-definition {
+  background: #eee8ff !important;
+  border-left-color: #5b21b6 !important;
+  border-color: #8b5cf6 !important;
+}
+.example,
+.example-box,
+.box-example {
+  background: #ffe7e2 !important;
+  border-left-color: #c2410c !important;
+  border-color: #f97316 !important;
+}
+
+/* Full chart: force the high-contrast hierarchy */
+.full-chart-page .org-main-head {
+  background: #0645ad !important;
+  border: 2px solid #032f73 !important;
+  color: #fff !important;
+}
+.full-chart-page .org-main-head * {
+  color: #fff !important;
+}
+.full-chart-page .org-division-head {
+  background: #087f3e !important;
+  border: 2px solid #045b2b !important;
+  color: #fff !important;
+}
+.full-chart-page .org-division-head * {
+  color: #fff !important;
+}
+.full-chart-page .org-sub-head {
+  background: #f2a900 !important;
+  border: 2px solid #a66f00 !important;
+  color: #17120a !important;
+}
+.full-chart-page .org-sub-head * {
+  color: #17120a !important;
+}
+
+/* Colour guide */
+.full-chart-page .chart-colour-key .key-division {
+  background: #0645ad !important;
+  border-color: #032f73 !important;
+}
+.full-chart-page .chart-colour-key .key-subdivision {
+  background: #087f3e !important;
+  border-color: #045b2b !important;
+}
+.full-chart-page .chart-colour-key .key-subsubdivision {
+  background: #f2a900 !important;
+  border-color: #a66f00 !important;
+}
+
+/* High-contrast navigation */
+header,
+.site-header,
+nav {
+  background: #062b63;
+}
+nav a,
+.site-header a {
+  color: #ffffff;
+}
+nav a:hover,
+nav a.active,
+.site-header a:hover,
+.site-header a.active {
+  background: #0b63f6;
+  color: #ffffff;
+}
+
+/* Buttons */
+button,
+.btn,
+.button,
+.card-link {
+  background: #0645ad;
+  color: #ffffff !important;
+  border-color: #032f73;
+}
+button:hover,
+.btn:hover,
+.button:hover,
+.card-link:hover {
+  background: #032f73;
+}
+
+/* References / credit */
+.references,
+.reference-box,
+.credit {
+  border-color: #b77900;
+}
+
+/* Focus visibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #f2a900;
+  outline-offset: 2px;
+}
+
+
+/* HOME — five primary divisions */
+.high-contrast-page .feature-card:nth-of-type(1),
+.high-contrast-page .home-card:nth-of-type(1),
+.high-contrast-page .division-card:nth-of-type(1) {
+  border-top: 8px solid #0645ad !important;
+}
+.high-contrast-page .feature-card:nth-of-type(2),
+.high-contrast-page .home-card:nth-of-type(2),
+.high-contrast-page .division-card:nth-of-type(2) {
+  border-top: 8px solid #087f3e !important;
+}
+.high-contrast-page .feature-card:nth-of-type(3),
+.high-contrast-page .home-card:nth-of-type(3),
+.high-contrast-page .division-card:nth-of-type(3) {
+  border-top: 8px solid #d97706 !important;
+}
+.high-contrast-page .feature-card:nth-of-type(4),
+.high-contrast-page .home-card:nth-of-type(4),
+.high-contrast-page .division-card:nth-of-type(4) {
+  border-top: 8px solid #6d28d9 !important;
+}
+.high-contrast-page .feature-card:nth-of-type(5),
+.high-contrast-page .home-card:nth-of-type(5),
+.high-contrast-page .division-card:nth-of-type(5) {
+  border-top: 8px solid #c2410c !important;
+}
+
+/* Home page hierarchy panels */
+.high-contrast-page .division,
+.high-contrast-page .home-division {
+  border-left: 8px solid #0645ad;
+}
+.high-contrast-page .subdivision,
+.high-contrast-page .home-subdivision {
+  border-left: 8px solid #087f3e;
+}
+.high-contrast-page .subsubdivision,
+.high-contrast-page .home-subsubdivision {
+  border-left: 8px solid #f2a900;
+}
