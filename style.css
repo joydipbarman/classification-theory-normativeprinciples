@@ -622,3 +622,57 @@ button:focus-visible {
 .high-contrast-page .home-subsubdivision {
   border-left: 8px solid #f2a900;
 }
+
+
+/* Complete Organized Chart — examples for every numbered topic */
+.full-chart-page .org-example {
+  margin: 4px 0 0 11px;
+  border: 1px solid #c2410c;
+  border-radius: 6px;
+  background: #fff7f2;
+  overflow: hidden;
+}
+.full-chart-page .org-example summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 6px 8px;
+  background: #c2410c;
+  color: #fff;
+  font-size: .63rem;
+  font-weight: 900;
+  letter-spacing: .02em;
+}
+.full-chart-page .org-example summary::-webkit-details-marker { display:none; }
+.full-chart-page .org-example summary:before {
+  content: '＋';
+  display: inline-block;
+  margin-right: 5px;
+  font-weight: 900;
+}
+.full-chart-page .org-example[open] summary:before { content: '−'; }
+.full-chart-page .org-example-content {
+  padding: 8px 9px 9px;
+  color: #17202a;
+  background: #fff7f2;
+  font-size: .64rem;
+  line-height: 1.45;
+}
+.full-chart-page .org-example-block + .org-example-block {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #f0c5b5;
+}
+.full-chart-page .org-example-label {
+  display: block;
+  margin-bottom: 3px;
+  color: #9a3412;
+  font-weight: 900;
+  font-size: .59rem;
+  text-transform: uppercase;
+}
+.full-chart-page .org-leaf {
+  margin-bottom: 0;
+}
+.full-chart-page .org-leaf-wrap { margin-bottom: 4px; }
+
+.full-chart-page .chart-colour-key .key-example { background:#c2410c !important; border-color:#7c2d12 !important; }
